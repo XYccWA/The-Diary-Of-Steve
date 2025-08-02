@@ -1,6 +1,6 @@
 package com.XYccWA.thediaryofsteve.Command;
 
-import com.XYccWA.thediaryofsteve.Capability.Technology.PlayerTechPointProvider;
+import com.XYccWA.thediaryofsteve.Capability.TechPoint.PlayerTechPointProvider;
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

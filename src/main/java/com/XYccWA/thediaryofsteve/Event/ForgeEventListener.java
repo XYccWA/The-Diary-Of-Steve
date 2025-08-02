@@ -1,11 +1,8 @@
 package com.XYccWA.thediaryofsteve.Event;
 
-import com.XYccWA.thediaryofsteve.Capability.Technology.PlayerTechPointProvider;
+import com.XYccWA.thediaryofsteve.Capability.TechPoint.PlayerTechPointProvider;
 import com.XYccWA.thediaryofsteve.Command.GetTechPointCommand;
-import com.mojang.brigadier.CommandDispatcher;
-import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.level.block.CropBlock;
-import net.minecraftforge.client.event.RegisterClientCommandsEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,11 +13,6 @@ import static com.XYccWA.thediaryofsteve.TheDiaryOfSteve.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEventListener {
-    @SubscribeEvent
-    public static void registerClientCommandsEvent(RegisterClientCommandsEvent event) {
-        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-        GetTechPointCommand.register(dispatcher);
-    }
 
     @SubscribeEvent
     public static void registerCommand(RegisterCommandsEvent event){
