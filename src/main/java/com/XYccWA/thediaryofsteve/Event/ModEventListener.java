@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import static com.XYccWA.thediaryofsteve.TheDiaryOfSteve.MODID;
 
 
-@Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MODID)
 public class ModEventListener {
 
     @SubscribeEvent
