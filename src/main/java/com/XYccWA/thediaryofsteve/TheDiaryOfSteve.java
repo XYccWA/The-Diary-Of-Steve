@@ -40,14 +40,5 @@ public class TheDiaryOfSteve
         }
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void registerClientCommandsEvent(RegisterClientCommandsEvent event) {
-            CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
-
-            GetTechPointCommand.register(dispatcher);
-        }
-    }
 }
 
