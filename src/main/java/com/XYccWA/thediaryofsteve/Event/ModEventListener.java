@@ -12,7 +12,6 @@ import static com.XYccWA.thediaryofsteve.TheDiaryOfSteve.MODID;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MODID)
 public class ModEventListener {
 
-
     @SubscribeEvent
     public static void registerCapability(RegisterCapabilitiesEvent event){
         event.register(PlayerTechPointProvider.class);

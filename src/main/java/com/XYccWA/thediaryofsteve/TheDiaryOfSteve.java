@@ -1,5 +1,6 @@
 package com.XYccWA.thediaryofsteve;
 
+import com.XYccWA.thediaryofsteve.Capability.LogicalThinking.PlayerLogicalThinkingProvider;
 import com.XYccWA.thediaryofsteve.Capability.TechPoint.PlayerTechPointProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
@@ -31,6 +32,11 @@ public class TheDiaryOfSteve
         if(event.getObject() instanceof Player player){
             if(!player.getCapability(PlayerTechPointProvider.PLAYER_TECH_POINT_CAPABILITY).isPresent()){
                 event.addCapability(new ResourceLocation(MODID, "techpoint"), new PlayerTechPointProvider());
+            }
+        }
+        if(event.getObject() instanceof Player player){
+            if(!player.getCapability(PlayerLogicalThinkingProvider.PLAYER_LOGICAL_THINKING_CAPABILITY).isPresent()){
+                event.addCapability(new ResourceLocation(MODID, "logicalthinking"), new PlayerLogicalThinkingProvider());
             }
         }
     }

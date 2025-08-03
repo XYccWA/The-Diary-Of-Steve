@@ -1,4 +1,4 @@
-package com.XYccWA.thediaryofsteve.Command;
+package com.XYccWA.thediaryofsteve.Command.GetValue;
 
 import com.XYccWA.thediaryofsteve.Capability.TechPoint.PlayerTechPointProvider;
 import com.mojang.brigadier.CommandDispatcher;
