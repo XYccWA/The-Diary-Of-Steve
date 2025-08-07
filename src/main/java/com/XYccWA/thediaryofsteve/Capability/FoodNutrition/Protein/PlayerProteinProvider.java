@@ -1,4 +1,5 @@
-package com.XYccWA.thediaryofsteve.Capability.TechPoint;
+package com.XYccWA.thediaryofsteve.Capability.FoodNutrition.Protein;
+
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -12,26 +13,26 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PlayerTechPointProvider implements ICapabilityProvider, INBTSerializable {
+public class PlayerProteinProvider implements ICapabilityProvider, INBTSerializable {
 
-    private PlayerTechPoint playerTechPoint;
-    public static final Capability<PlayerTechPoint> PLAYER_TECH_POINT_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerTechPoint>() {});
-    private final LazyOptional<PlayerTechPoint> lazyOptional = LazyOptional.of(() -> this.playerTechPoint);
+    private PlayerProtein playerProtein;
+    public static final Capability<PlayerProtein> PLAYER_PROTEIN_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerProtein>() {});
+    private final LazyOptional<PlayerProtein> lazyOptional = LazyOptional.of(() -> this.playerProtein);
 
-    public PlayerTechPointProvider() {
-        this.playerTechPoint = new PlayerTechPoint();
+    public PlayerProteinProvider() {
+        this.playerProtein = new PlayerProtein();
     }
 
     @Override
     public Tag serializeNBT() {
         var tag = new CompoundTag();
-        playerTechPoint.saveNBTData(tag);
+        playerProtein.saveNBTData(tag);
         return tag;
     }
 
     @Override
     public void deserializeNBT(Tag nbt) {
-        playerTechPoint.loadNBTData((CompoundTag) nbt);
+        playerProtein.loadNBTData((CompoundTag) nbt);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class PlayerTechPointProvider implements ICapabilityProvider, INBTSeriali
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
-        if(cap == PLAYER_TECH_POINT_CAPABILITY){
+        if(cap == PLAYER_PROTEIN_CAPABILITY){
             return lazyOptional.cast();
         }else{
             return lazyOptional.empty();

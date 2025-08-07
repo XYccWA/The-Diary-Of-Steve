@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=east": [
+      {
+        "model": "thediaryofsteve:block/research_table"
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "thediaryofsteve:block/research_table",
+        "y": 180
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "thediaryofsteve:block/research_table",
+        "y": 270
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "thediaryofsteve:block/research_table",
+        "y": 90
+      }
+    ]
+  }
+}

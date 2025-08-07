@@ -1,5 +1,4 @@
-package com.XYccWA.thediaryofsteve.Capability.LogicalThinking;
-
+package com.XYccWA.thediaryofsteve.Capability.TechTree.TechPoint;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -13,26 +12,26 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PlayerLogicalThinkingProvider implements ICapabilityProvider, INBTSerializable {
-    private PlayerLogicalThinking playerLogicalThinking;
-    public static final Capability<PlayerLogicalThinking> PLAYER_LOGICAL_THINKING_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerLogicalThinking>() {});
-    private final LazyOptional<PlayerLogicalThinking> lazyOptional = LazyOptional.of(() -> this.playerLogicalThinking);
+public class PlayerTechPointProvider implements ICapabilityProvider, INBTSerializable {
 
+    private PlayerTechPoint playerTechPoint;
+    public static final Capability<PlayerTechPoint> PLAYER_TECH_POINT_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerTechPoint>() {});
+    private final LazyOptional<PlayerTechPoint> lazyOptional = LazyOptional.of(() -> this.playerTechPoint);
 
-    public PlayerLogicalThinkingProvider(){
-        this.playerLogicalThinking = new PlayerLogicalThinking();
+    public PlayerTechPointProvider() {
+        this.playerTechPoint = new PlayerTechPoint();
     }
 
     @Override
     public Tag serializeNBT() {
         var tag = new CompoundTag();
-        playerLogicalThinking.saveNBTData(tag);
+        playerTechPoint.saveNBTData(tag);
         return tag;
     }
 
     @Override
     public void deserializeNBT(Tag nbt) {
-        playerLogicalThinking.loadNBTData((CompoundTag) nbt);
+        playerTechPoint.loadNBTData((CompoundTag) nbt);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class PlayerLogicalThinkingProvider implements ICapabilityProvider, INBTS
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
-        if(cap == PLAYER_LOGICAL_THINKING_CAPABILITY){
+        if(cap == PLAYER_TECH_POINT_CAPABILITY){
             return lazyOptional.cast();
         }else{
             return lazyOptional.empty();

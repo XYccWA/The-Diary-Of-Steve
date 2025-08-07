@@ -1,6 +1,7 @@
 package com.XYccWA.thediaryofsteve.Event;
 
-import com.XYccWA.thediaryofsteve.Capability.TechPoint.PlayerTechPointProvider;
+import com.XYccWA.thediaryofsteve.Capability.TechTree.TechPoint.PlayerTechPointProvider;
+import com.XYccWA.thediaryofsteve.Command.GetValue.GetFoodNutritionCommand;
 import com.XYccWA.thediaryofsteve.Command.GetValue.GetLogicalThinkingCommand;
 import com.XYccWA.thediaryofsteve.Command.GetValue.GetTechPointCommand;
 import net.minecraft.world.level.block.CropBlock;
@@ -19,6 +20,7 @@ public class ForgeEventListener {
     public static void registerCommand(RegisterCommandsEvent event){
         GetTechPointCommand.register(event.getDispatcher());
         GetLogicalThinkingCommand.register(event.getDispatcher());
+        GetFoodNutritionCommand.register(event.getDispatcher());
     }
 
     @SubscribeEvent

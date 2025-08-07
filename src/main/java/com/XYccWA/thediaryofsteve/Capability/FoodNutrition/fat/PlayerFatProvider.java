@@ -1,4 +1,4 @@
-package com.XYccWA.thediaryofsteve.Capability.FoodNutrition.SugarContent;
+package com.XYccWA.thediaryofsteve.Capability.FoodNutrition.fat;
 
 
 import net.minecraft.core.Direction;
@@ -13,26 +13,26 @@ import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class PlayerSugarContentProvider implements ICapabilityProvider, INBTSerializable {
+public class PlayerFatProvider implements ICapabilityProvider, INBTSerializable {
 
-    private PlayerSugarContent playerSugarContent;
-    public static final Capability<PlayerSugarContent> PLAYER_SUGAR_CONTENT_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerSugarContent>() {});
-    private final LazyOptional<PlayerSugarContent> lazyOptional = LazyOptional.of(() -> this.playerSugarContent);
+    private PlayerFat playerFat;
+    public static final Capability<PlayerFat> PLAYER_FAT_CAPABILITY = CapabilityManager.get(new CapabilityToken<PlayerFat>() {});
+    private final LazyOptional<PlayerFat> lazyOptional = LazyOptional.of(() -> this.playerFat);
 
-    public PlayerSugarContentProvider() {
-        this.playerSugarContent = new PlayerSugarContent();
+    public PlayerFatProvider() {
+        this.playerFat = new PlayerFat();
     }
 
     @Override
     public Tag serializeNBT() {
         var tag = new CompoundTag();
-        playerSugarContent.saveNBTData(tag);
+        playerFat.saveNBTData(tag);
         return tag;
     }
 
     @Override
     public void deserializeNBT(Tag nbt) {
-        playerSugarContent.loadNBTData((CompoundTag) nbt);
+        playerFat.loadNBTData((CompoundTag) nbt);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PlayerSugarContentProvider implements ICapabilityProvider, INBTSeri
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap) {
-        if(cap == PLAYER_SUGAR_CONTENT_CAPABILITY){
+        if(cap == PLAYER_FAT_CAPABILITY){
             return lazyOptional.cast();
         }else{
             return lazyOptional.empty();

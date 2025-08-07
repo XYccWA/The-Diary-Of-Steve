@@ -1,4 +1,4 @@
-package com.XYccWA.thediaryofsteve.Capability.TechPoint;
+package com.XYccWA.thediaryofsteve.Capability.TechTree.TechPoint;
 
 import net.minecraft.nbt.CompoundTag;
 
